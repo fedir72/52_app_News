@@ -51,6 +51,23 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    //переход на выбранную новость по нажатию
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToOneNews", sender: self)
+        
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToOneNews" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+            //передача значения в артикл на дестинейшнконтроллер
+        (segue.destination as? OneNewsController)?.article = articles[indexPath.row]
+        
+        //отмена фона выбранной ячейки
+                tableView.deselectRow(at:indexPath, animated: true)
+                
+            }
+        }
+    }
     
 }

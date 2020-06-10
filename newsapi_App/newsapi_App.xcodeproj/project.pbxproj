@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A328FC2E2490BD9B0043A09B /* OneNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328FC2D2490BD9B0043A09B /* OneNewsController.swift */; };
 		A33391F32490230A00AE0EF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33391F22490230A00AE0EF1 /* AppDelegate.swift */; };
 		A33391F52490230A00AE0EF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33391F42490230A00AE0EF1 /* SceneDelegate.swift */; };
 		A33391F72490230A00AE0EF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33391F62490230A00AE0EF1 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A328FC2D2490BD9B0043A09B /* OneNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneNewsController.swift; sourceTree = "<group>"; };
 		A33391EF2490230A00AE0EF1 /* newsapi_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsapi_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33391F22490230A00AE0EF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A33391F42490230A00AE0EF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +65,9 @@
 				A33391F22490230A00AE0EF1 /* AppDelegate.swift */,
 				A33391F42490230A00AE0EF1 /* SceneDelegate.swift */,
 				A33391F62490230A00AE0EF1 /* ViewController.swift */,
-				A33392082490279D00AE0EF1 /* Model */,
+				A328FC2D2490BD9B0043A09B /* OneNewsController.swift */,
 				A33391F82490230A00AE0EF1 /* Main.storyboard */,
+				A33392082490279D00AE0EF1 /* Model */,
 				A33391FB2490230A00AE0EF1 /* Assets.xcassets */,
 				A33391FD2490230A00AE0EF1 /* LaunchScreen.storyboard */,
 				A33392002490230A00AE0EF1 /* Info.plist */,
@@ -157,6 +160,7 @@
 				A33391F72490230A00AE0EF1 /* ViewController.swift in Sources */,
 				A33391F32490230A00AE0EF1 /* AppDelegate.swift in Sources */,
 				A33391F52490230A00AE0EF1 /* SceneDelegate.swift in Sources */,
+				A328FC2E2490BD9B0043A09B /* OneNewsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -134,6 +134,7 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="wdf-YZ-bpx" id="oPp-Cp-3dN"/>
                         <outlet property="imageView" destination="drd-3q-gGA" id="be2-YH-WZN"/>
+                        <outlet property="openInBrowserButton" destination="Iqh-D8-zMp" id="Yua-Oa-FW4"/>
                         <outlet property="titleLabel" destination="BTh-w1-Yq6" id="qIW-6w-fuJ"/>
                     </connections>
                 </viewController>

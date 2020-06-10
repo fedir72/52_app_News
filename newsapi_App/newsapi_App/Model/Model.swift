@@ -10,6 +10,12 @@ import Foundation
 
 //http://newsapi.org/v2/top-headlines?country=ua&category=business&apiKey=a369977c717a42b1b25a2651946cd576
 
+//путь к данным
+var UrlToData: URL {
+    let path = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]+"/data.json"
+    let urlPath = URL(fileURLWithPath: path)
+    return urlPath
+}
 
 
 var articles: [Article] = []
@@ -20,12 +26,10 @@ func loadNews() {
     let sesion = URLSession(configuration: .default)
     sesion.downloadTask(with: url!) { (urlFile, responce, error) in
         if urlFile != nil {
-            
-          let path =  NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]+"/data.json"
-        let urlPath = URL(fileURLWithPath: path)
-         try?   FileManager.default.copyItem(at: urlFile!, to: urlPath )
+                     try?   FileManager.default.copyItem(at: urlFile!, to: UrlToData )
             //MARK: - вызываем фуункцию парс
-             print(urlPath)
+            
+             print(UrlToData)
             parseNews()
             print(articles.count)
            
@@ -36,19 +40,26 @@ func loadNews() {
 }
 
 func parseNews() {
+  
+    //данные и проверка
+    guard let data = try? Data(contentsOf: UrlToData) else {return}
     
-    let path = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]+"/data.json"
-    let urlPath = URL(fileURLWithPath: path)
     
-    let data = try? Data(contentsOf: urlPath)
-    let rootDictionary  = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any]
-    
-    let array = rootDictionary!["articles"] as! [[String:Any]]
-    var returnArray: [Article] = []
-    for dict in array {
-        
-        let newArticle = Article(dictionary: dict)
-        returnArray.append(newArticle)
+     let rootDictionaryAny  = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+    if rootDictionaryAny == nil {
+        return
     }
-    articles = returnArray
+    let rootDictionary = rootDictionaryAny as? [String:Any]
+    if rootDictionary == nil {
+        return
+    }
+    if let array = rootDictionary!["articles"] as? [[String:Any]] {
+         var returnArray: [Article] = []
+         for dict in array {
+             
+             let newArticle = Article(dictionary: dict)
+             returnArray.append(newArticle)
+         }
+         articles = returnArray
+    }
 }

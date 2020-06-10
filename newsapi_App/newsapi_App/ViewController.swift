@@ -62,10 +62,9 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate {
             if let indexPath = tableView.indexPathForSelectedRow {
             //передача значения в артикл на дестинейшнконтроллер
         (segue.destination as? OneNewsController)?.article = articles[indexPath.row]
-        
         //отмена фона выбранной ячейки
-                tableView.deselectRow(at:indexPath, animated: true)
-                
+        tableView.deselectRow(at:indexPath, animated: true)
+
             }
         }
     }

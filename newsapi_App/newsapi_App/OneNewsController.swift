@@ -21,8 +21,16 @@ class OneNewsController: UIViewController {
 
         titleLabel.text = article?.title
         descriptionLabel.text = article?.description
-    }
+          //получение картинки
+        DispatchQueue.main.async {
+            if let url = URL(string: self.article.urlToImage!) {
+                if let data = try? Data(contentsOf: url) { self.imageView.image = UIImage(data: data ) }
+                 }
+             }
+        }
+     
     @IBAction func pushOpenAction(_ sender: UIButton) {
+     
     }
     
 

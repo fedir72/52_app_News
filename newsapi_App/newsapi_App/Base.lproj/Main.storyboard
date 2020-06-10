@@ -73,14 +73,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="drd-3q-gGA">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="lde-Yp-Ewq">
+                                <rect key="frame" x="197" y="211" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="drd-3q-gGA">
                                 <rect key="frame" x="87" y="136" width="240" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="RAh-Pt-dIB"/>
+                                    <constraint firstAttribute="width" constant="240" id="uUh-e5-aLA"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTh-w1-Yq6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTh-w1-Yq6">
                                 <rect key="frame" x="20" y="344" width="374" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.54552445270000005" green="0.55246902090000005" blue="0.59364030909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="9Jm-vJ-wUk"/>
+                                    <constraint firstAttribute="width" constant="374" id="Vxe-t0-k1K"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -111,8 +121,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="drd-3q-gGA" firstAttribute="top" secondItem="dkC-UC-oPl" secondAttribute="top" constant="48" id="QaV-Tg-cem"/>
+                            <constraint firstItem="drd-3q-gGA" firstAttribute="centerX" secondItem="dkC-UC-oPl" secondAttribute="centerX" id="a8g-fA-ydq"/>
                             <constraint firstItem="dkC-UC-oPl" firstAttribute="bottom" secondItem="Iqh-D8-zMp" secondAttribute="bottom" constant="31" id="cTw-24-Ijc"/>
+                            <constraint firstItem="BTh-w1-Yq6" firstAttribute="top" secondItem="drd-3q-gGA" secondAttribute="bottom" constant="38" id="d6V-Zp-ven"/>
                             <constraint firstItem="Iqh-D8-zMp" firstAttribute="centerX" secondItem="dkC-UC-oPl" secondAttribute="centerX" id="fI5-pF-gEG"/>
+                            <constraint firstItem="BTh-w1-Yq6" firstAttribute="centerX" secondItem="dkC-UC-oPl" secondAttribute="centerX" id="yui-ld-2ZT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dkC-UC-oPl"/>
                     </view>

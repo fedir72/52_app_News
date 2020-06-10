@@ -21,6 +21,7 @@ var UrlToData: URL {
 var articles: [Article] = []
 
 func loadNews(completionHandler: (() -> Void)?) {
+    let urlSTR = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-05-10&sortBy=publishedAt&apiKey=a369977c717a42b1b25a2651946cd576"
     let urlString = "http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=a369977c717a42b1b25a2651946cd576"
     let url = URL(string: urlString)
     let sesion = URLSession(configuration: .default)
@@ -28,10 +29,10 @@ func loadNews(completionHandler: (() -> Void)?) {
         if urlFile != nil {
                      try?   FileManager.default.copyItem(at: urlFile!, to: UrlToData )
             //MARK: - вызываем фуункцию парс
-             print(UrlToData)
+            // print(UrlToData)
             parseNews()
             completionHandler?()
-            print(articles.count)
+            //print(articles.count)
            
             
             

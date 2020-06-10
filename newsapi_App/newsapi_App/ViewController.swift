@@ -11,12 +11,46 @@ import UIKit
 
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //загрузка новостей и перезагрузка тейблвью в комплишене
+        loadNews {
+            DispatchQueue.main.async {
+           self.tableView.reloadData()
+            }
+        }
+        tableView.dataSource = self
+        tableView.delegate = self
+       
     }
 
 
 }
 
+extension ViewController: UITableViewDataSource,UITableViewDelegate {
+    
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let article = articles[indexPath.row]
+        cell.textLabel?.text = article.author
+        cell.detailTextLabel?.text = article.publishedAt
+         
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    
+}
